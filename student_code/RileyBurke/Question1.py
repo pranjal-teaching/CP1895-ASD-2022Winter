@@ -1,0 +1,47 @@
+def generate_multiplication_table(width: int, height: int):
+    table = ""
+    width_counter = 1
+    height_counter = 1
+    max_total = height * width
+    max_digits = len(str(max_total))
+
+    for row in range(height):
+        for column in range(width):
+            total = width_counter * height_counter
+            table_format = "{:" + str(max_digits) + "}"
+            table += table_format.format(total) + " "
+            width_counter += 1
+        table += "\n"
+        width_counter = 1
+        height_counter += 1
+    print(table)
+    save_table(table)
+
+
+def save_table(table):
+    with open("table.txt", "w") as fileHandler:
+        for text in table:
+            fileHandler.write(str(text))
+
+
+def main():
+    print("Multiplication Table Generator")
+    print()
+    while True:
+        try:
+            a = int(input("Enter width of table: "))
+            break
+        except ValueError:
+            print("Please enter a valid integer for width.")
+    while True:
+        try:
+            b = int(input("Enter height of table: "))
+            break
+        except ValueError:
+            print("Please enter a valid integer for height.")
+    print()
+    generate_multiplication_table(a, b)
+
+
+if __name__ == "__main__":
+    main()
