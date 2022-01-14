@@ -24,21 +24,37 @@ def save_table(table):
             fileHandler.write(str(text))
 
 
+def input_width():
+    while True:
+        try:
+            width = int(input("Enter width of table: "))
+            if width > 0:
+                break
+            else:
+                print("Width must be greater than zero.")
+        except ValueError:
+            print("Please enter a valid integer for width.")
+    return width
+
+
+def input_height():
+    while True:
+        try:
+            height = int(input("Enter height of table: "))
+            if height > 0:
+                break
+            else:
+                print("Width must be greater than zero.")
+        except ValueError:
+            print("Please enter a valid integer for height.")
+    return height
+
+
 def main():
     print("Multiplication Table Generator")
     print()
-    while True:
-        try:
-            a = int(input("Enter width of table: "))
-            break
-        except ValueError:
-            print("Please enter a valid integer for width.")
-    while True:
-        try:
-            b = int(input("Enter height of table: "))
-            break
-        except ValueError:
-            print("Please enter a valid integer for height.")
+    a = input_width()
+    b = input_height()
     print()
     generate_multiplication_table(a, b)
 
