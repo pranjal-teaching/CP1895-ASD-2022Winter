@@ -25,3 +25,4 @@ print(pranjal)
 # delete key-value pair from a dict
 del pranjal['NetWorth']
 print(pranjal)
+
