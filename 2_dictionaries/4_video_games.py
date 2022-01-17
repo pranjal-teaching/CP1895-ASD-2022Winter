@@ -1,3 +1,15 @@
+def show_book(book_catalog):
+    pass
+
+
+def add_edit_book(book_catalog, mode):
+    pass
+
+
+def delete_book(book_catalog):
+    pass
+
+
 def display_menu():
     print("The Book Catalog program")
     print()
