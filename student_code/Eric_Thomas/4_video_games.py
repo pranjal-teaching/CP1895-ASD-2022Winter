@@ -10,7 +10,6 @@ def display_menu():
 
 
 def show_book(book_catalog):
-    print()
     i = 1
     for key, value in book_catalog.items():
         print(f"{i}. {key}")
@@ -19,7 +18,7 @@ def show_book(book_catalog):
     selected_book = int(input(f"Please select a book (1-{i - 1}): ")) - 1
     selected_book_title = [key for key in book_catalog.keys()][selected_book]
     selected_book_author = book_catalog[selected_book_title]["author"]
-    selected_book_year  = book_catalog[selected_book_title]["pubyear"]
+    selected_book_year = book_catalog[selected_book_title]["pubyear"]
     print()
     # print(f"Book Name: {book_catalog[]}")
     print(f"Title: {selected_book_title}")
@@ -28,11 +27,40 @@ def show_book(book_catalog):
 
 
 def add_edit_book(book_catalog, mode):
-    pass
+    if mode == "add":
+        new_book_info = {}
+        new_book_title = input("Enter book name: ")
+        new_book_info["author"] = input("Enter book author: ")
+        new_book_info["pubyear"] = input("Enter book publication year: ")
+        book_catalog[new_book_title] = new_book_info
+
+    if mode == "edit":
+        i = 1
+        for key, value in book_catalog.items():
+            print(f"{i}. {key}")
+            i += 1
+        print()
+        selected_book = int(input(f"Please select a book (1-{i - 1}): ")) - 1
+
+        new_book_info = {}
+        new_book_title = input("Enter book name: ")
+        new_book_info["author"] = input("Enter book author: ")
+        new_book_info["pubyear"] = input("Enter book publication year: ")
+
+        [key for key in book_catalog.keys()][selected_book] = new_book_title
+
+        book_catalog[new_book_title] = new_book_info
 
 
 def delete_book(book_catalog):
-    pass
+    i = 1
+    for key, value in book_catalog.items():
+        print(f"{i}. {key}")
+        i += 1
+    print()
+    selected_book = int(input(f"Please select a book (1-{i - 1}): ")) - 1
+
+    book_catalog.pop(selected_book)
 
 
 def main():
