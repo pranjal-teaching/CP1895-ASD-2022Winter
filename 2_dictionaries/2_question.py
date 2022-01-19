@@ -7,7 +7,7 @@ user['fname'] = input('Fname:')
 user['lname'] = input('Lname:')
 user['age'] = int(input('Age'))
 print(user)
-
+user.items()
 # allow user to update age
 ch = input('Do you want to update age? (y/n)')
 if ch == 'y':
