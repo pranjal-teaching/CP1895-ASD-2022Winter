@@ -1,5 +1,21 @@
-def show_book(book_catalog):
+import pickle
 
+
+def save(book_catalog):
+    with open("book_file.bin", "wb") as file:
+        pickle.dump(book_catalog, file)
+
+
+def load():
+    with open("book_file.bin", "rb") as file:
+        print(pickle.load(file))
+
+
+def clear(book_catalog):
+    book_catalog.clear()
+
+
+def show_book(book_catalog):
     title = input('title: ')
     if title in book_catalog:
         book = book_catalog[title]
@@ -54,6 +70,9 @@ def display_menu():
     print("add -  Add book")
     print("edit - Edit book")
     print("del -  Delete book")
+    print("save -  Save Catalog")
+    print("load -  Load Catalog")
+    print("clear -  Clear Catalog")
     print("exit - Exit program")
 
 
@@ -81,6 +100,12 @@ def main():
             edit_book(book_catalog)
         elif command == "del":
             delete_book(book_catalog)
+        elif command == "save":
+            save(book_catalog)
+        elif command == "load":
+            load()
+        elif command == "clear":
+            clear(book_catalog)
         elif command == "exit":
             print("Bye!")
             break
