@@ -3,6 +3,7 @@ class Product:
         self.name = name
         self.price = price
         self.discountPercent = discountPercent
+        self.discountedAmount = self.price * self.discountPercent
 
     def getDiscountAmount(self):
         return self.price - self.getDiscountPrice()
