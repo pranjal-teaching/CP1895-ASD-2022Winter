@@ -1,8 +1,12 @@
+from dataclasses import dataclass # Step 1: import dataclass
+
+
+@dataclass # step 2: add dataclass decorator
 class Product:
-    def __init__(self, name, price, discountPercent):
-        self.name = name
-        self.price = price
-        self.discountPercent = discountPercent
+    # step 3: create attributes inside the class directly
+    name: str
+    price: int
+    discountPercent: int
 
     def getDiscountAmount(self):
         return self.price - self.getDiscountPrice()
