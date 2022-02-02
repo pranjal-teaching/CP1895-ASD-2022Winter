@@ -8,7 +8,7 @@ class City:
     tax_rate: float
 
     def collect_taxes(self):
-        return self.tax_rate * self.population * 500
+        return self.tax_rate * self.population
 
 
 if __name__ == '__main__':
