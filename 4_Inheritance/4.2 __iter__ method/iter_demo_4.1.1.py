@@ -16,10 +16,15 @@ class Students:
 
 
 asd_students = Students('ASD Rocks!')
-print(asd_students.get_members_count())
+print(asd_students.get_members_count()) # 0
 
 asd_students.add_member('Dawson')
 asd_students.add_member('Andre')
+asd_students.add_member('Robin')
+
+print(asd_students.get_members_count()) # 3
+print(asd_students.members)
 
 for asd_stu in asd_students:
     print(asd_stu)
+    break
