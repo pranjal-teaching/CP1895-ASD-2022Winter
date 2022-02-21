@@ -11,34 +11,47 @@ class Fraction:
     def denom(self):
         return self.__denom
 
+    # Hint
+    # Create another property called decimal and just return num/denom
+    # return self.decimal > other.decimal
+
     def __str__(self):
         return f'{self.__num}/{self.__denom}'
 
     def __add__(self, other):
+        # must return a Fraction obj
         pass
 
     def __sub__(self, other):
+        # must return a Fraction obj
         pass
 
     def __mul__(self, other):
+        # must return a Fraction obj
         pass
 
-    def __div__(self, other):
+    def __truediv__(self, other): # Correction -> div should have been truediv
+        # must return a Fraction obj
         pass
 
     def __eq__(self, other):
+        # Returns True/False
         pass
 
     def __lt__(self, other):
+        # Returns True/False
         pass
 
     def __gt__(self, other):
+        # Returns True/False
         pass
 
     def __le__(self, other):
+        # Returns True/False
         pass
 
     def __ge__(self, other):
+        # Returns True/False
         pass
 
 
@@ -48,4 +61,4 @@ print(two_thirds)
 print(half)
 
 # to test __add__
-print(two_thirds + half)
+print(two_thirds / half)
