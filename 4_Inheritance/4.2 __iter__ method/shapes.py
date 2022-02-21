@@ -67,19 +67,23 @@ bob = turtle.Turtle()
 # create new class called Scene
 # have the following methods: add_shape, __iter__
 class Scene:
-    def __init__(self):
-        pass
+    def __init__(self, scene_name):
+        self.scene_name = scene_name
+        self.scene_shapes = []
 
     def add_shape(self, new_shape):
-        pass
+        self.scene_shapes.append(new_shape)
 
     def __iter__(self):
-        pass
+        for shapes in self.scene_shapes:
+            yield shapes
 
-my_scene = Scene
+
+my_scene = Scene("scene1")
 my_scene.add_shape(c)
 my_scene.add_shape(r)
 my_scene.add_shape(s)
+my_scene.add_shape(Rectangle(width=20, height=35, color="yellow"))
 
 for shape in my_scene:
     shape.draw(bob)

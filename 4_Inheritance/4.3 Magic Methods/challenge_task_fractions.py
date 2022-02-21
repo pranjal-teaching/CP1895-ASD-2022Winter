@@ -1,0 +1,4 @@
+
+
+class Fraction:
+    pass
