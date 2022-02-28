@@ -1,3 +1,6 @@
+from challenge_task_fractions import Fraction
+
+
 class ImperialDistance:
     def __init__(self, feet, inches):
         assert inches < 12, 'Inches must be less than 12'
@@ -33,6 +36,7 @@ class ImperialDistance:
         """
         return self.feet == other.feet and self.inches == other.inches
 
+
 d1 = ImperialDistance(feet=3, inches=6)
 d2 = ImperialDistance(feet=2, inches=9)
 d3 = ImperialDistance(feet=3, inches=6)
@@ -44,3 +48,15 @@ print(d1 == d1)
 print(d1 == d3)
 
 d1 + d2
+
+two_thirds = Fraction(numerator=2, denominator=3)
+half = Fraction(numerator=1, denominator=2)
+print(two_thirds)
+print(half)
+
+# to test __add__
+print(two_thirds + half)
+print(two_thirds - half)
+print(two_thirds * half)
+
+print(half.decimal)

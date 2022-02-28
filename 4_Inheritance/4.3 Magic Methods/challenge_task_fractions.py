@@ -54,14 +54,3 @@ class Fraction:
         return self.decimal >= other.decimal
 
 
-two_thirds = Fraction(numerator=2, denominator=3)
-half = Fraction(numerator=1, denominator=2)
-print(two_thirds)
-print(half)
-
-# to test __add__
-print(two_thirds + half)
-print(two_thirds - half)
-print(two_thirds * half)
-
-print(half.decimal)
